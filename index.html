@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML Calculator</title>
+  <style>
+    /* Add some basic styling to our calculator */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #calculator {
+      width: 200px;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #display {
+      width: 100%;
+      height: 30px;
+      font-size: 24px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      text-align: right;
+    }
+    .button {
+      width: 50px;
+      height: 30px;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTML Calculator</h1>
+  <div id="calculator">
+    <input type="text" id="display" value="" readonly>
+    <div class="button" onclick="append('7')">7</div>
+    <div class="button" onclick="append('8')">8</div>
+    <div class="button" onclick="append('9')">9</div>
+    <div class="button" onclick="append('+')">+</div>
+    <br>
+    <div class="button" onclick="append('4')">4</div>
+    <div class="button" onclick="append('5')">5</div>
+    <div class="button" onclick="append('6')">6</div>
+    <div class="button" onclick="append('-')">-</div>
+    <br>
+    <div class="button" onclick="append('1')">1</div>
+    <div class="button" onclick="append('2')">2</div>
+    <div class="button" onclick="append('3')">3</div>
+    <div class="button" onclick="append('*')">x</div>
+    <br>
+    <div class="button" onclick="append('0')">0</div>
+    <div class="button" onclick="append('.')">.</div>
+    <div class="button" onclick="append('=')">=</div>
+    <div class="button" onclick="clearDisplay()">C</div>
+  </div>
+  <script>
+    let display = document.getElementById('display');
+    let currentValue = '';
+    function append(value) {
+      currentValue += value;
+      display.value = currentValue;
+    }
+    function clearDisplay() {
+      currentValue = '';
+      display.value = currentValue;
+    }
+  </script>
+</body>
+</html>
